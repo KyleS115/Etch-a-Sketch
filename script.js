@@ -18,22 +18,32 @@ function sizeSketchPad() {
 function addGrid(rows, columns) {
     for (let a = 1; a <= rows; a++) {
         const newRow = document.createElement('div');
+        newRow.classList.add('row');
         sketchPad.appendChild(newRow);
         for (let b = 1; b <= columns; b++) {
-            const newSquare = document.createElement('div');
-            let widthOfSquare = sideLength / columns;
-            let heightOfSquare = sideLength / rows;
-            newSquare.style.width = widthOfSquare + 'px';
-            newSquare.style.height = heightOfSquare + 'px';
-            newSquare.style.outline = '.5px solid black';
-            newRow.appendChild(newSquare);
+            const newRectangle = document.createElement('div');
+            newRectangle.classList.add('rectangle');
+            let widthOfRectangle = sideLength / columns;
+            let heightOfRectangle = sideLength / rows;
+            newRectangle.style.width = widthOfRectangle + 'px';
+            newRectangle.style.height = heightOfRectangle + 'px';
+            newRectangle.style.outline = '.5px solid black';
+            newRow.appendChild(newRectangle);
         };
     };
     return;
 };
 
+currentColor = 'black'
 sideLength = 0
 const body = document.querySelector('body');
 const sketchPad = document.getElementById('sketchpad');
 sizeSketchPad()
 addGrid(16, 16)
+const rectangles = document.querySelectorAll('.rectangle');
+console.log(rectangles)
+rectangles.forEach((div) => {
+    div.addEventListener('mouseover', () => {
+        div.style.backgroundColor = currentColor
+    });
+});
