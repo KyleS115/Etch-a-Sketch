@@ -56,16 +56,16 @@ function reset() {
     };
     addGrid(parseInt(prompt('Enter size of grid (max 100):')));
     const squares = document.querySelectorAll('.square');
-    squares.forEach((div) => {
-        div.addEventListener('mouseover', () => {
-            if (div.style.backgroundColor === 'white') {
-                div.style.backgroundColor = randomRGB()
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            if (square.style.backgroundColor === 'white') {
+                square.style.backgroundColor = randomRGB()
             } else {
-                currentFilterLength = div.style.filter.length;
-                currentFilter = parseInt(div.style.filter.slice(11, currentFilterLength - 2));
+                currentFilterLength = square.style.filter.length;
+                currentFilter = parseInt(square.style.filter.slice(11, currentFilterLength - 2));
                 if (currentFilter > 0) {
-                    div.style.filter = 'brightness(' + (currentFilter - 10) + '%)';
-                    console.log(div.style.filter);
+                    square.style.filter = 'brightness(' + (currentFilter - 10) + '%)';
+                    console.log(square.style.filter);
                 };
             };
         });
