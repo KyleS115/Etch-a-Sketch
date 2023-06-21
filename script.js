@@ -5,12 +5,10 @@ function sizeSketchPad() {
         sideLength += bodyWidth
         sketchPad.style.width = bodyWidth + 'px';
         sketchPad.style.height = bodyWidth + 'px';
-        resetButton.style.width = bodyWidth + 'px';
     } else {
         sideLength += bodyHeight
         sketchPad.style.width = bodyHeight + 'px';
         sketchPad.style.height = bodyHeight + 'px';
-        resetButton.style.width = bodyHeight + 'px';
     }
     console.log(bodyWidth)
     console.log(sketchPad.style.width)
