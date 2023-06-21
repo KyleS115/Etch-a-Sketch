@@ -1,5 +1,5 @@
 function sizeSketchPad() {
-    let bodyHeight = parseInt(window.getComputedStyle(body).height) * .9;
+    let bodyHeight = parseInt(window.getComputedStyle(body).height) * .75;
     let bodyWidth = parseInt(window.getComputedStyle(body).width);
     if (bodyHeight >= bodyWidth) {
         sideLength += bodyWidth
